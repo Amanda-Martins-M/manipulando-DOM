@@ -1,47 +1,62 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manipulando o DOM</title>
+    <title>Menu Hambúrguer</title>
+
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+
+    <link rel="stylesheet" href="global.css">
+
 </head>
+
 <body>
-    <h1 id = "titulo">Conhecendo a DOM</h1>
-    <h2>O que é a DOM?</h2>
-    <p>O DOM significa Document Object Model.</p>
-    <p>Traduzindo: Modelo de Obejto de Documento.</p>
+        <header>
+            <div class="container">
+            <div class="header">
+                <h1>Logo</h1>
+                <nav aria-label="Menu principal">
+                    <button aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal" id="btn-menu">
+                        <i class="fi-sr-menu-burger" aria-hidden="true"></i>
+                    </button>
+                    <ul id="menu-principal" class="menu">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Sobre</a></li>
+                        <li><a href="#">Contato</a></li>
+                        <li><a href="#">Serviços</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
 
-    <p>
-        É basicamente uma representação da página web em forma de árvore, onde cada elemento HTML é um <em>nó (ou node)</em> que podemos acessar e manipular com o JavaScript.
-    </p>
-
-    <h2>Como funciona?</h2>
-    <p>Quando o navegador carrega uma página acontece o seguinte:</p>
-    <ol>
-        <li>
-            O navegador lê o HTML e cria o <abbr title="Document Object Model"> DOM.</abbr>
-        </li>
-        
-        <li> 
-            O JavaScript pode então navegar, alterar, criar ou remover elementos nesse DOM.
-        </li>
-
-        <li>O navegador atualiza a página com as mudanças que você fez.</li>
-    </ol>
-
-    <h2>O que dá pra fazer com o DOM?</h2>
-    <ul>
-        <li>Selecionar elementos</li>
-        <li>Ler ou alterar conteúdo</li>
-        <li>Alterar atributos</li>
-        <li>Alterar estilos</li>
-        <li>Criar ou remover elementos</li>
-        <li>Brincar com eventos</li>
-    </ul>
-
-    <button onclick=mudarTexto()>Clique aqui</button>
-
-    <script src="01-basico-da-dom.js"></script>
-
+    <main>
+        <div class="container">
+            <section class="todo-list-container">
+                <h2>lista de afazeres</h2>
+                
+                <!-- campo para digitar a minha tarefa  -->
+                <form class="form-todo">
+                    <label for="sr-only">Digite a sua tarefa</label>
+                        <input type="text" id="tarefa" placeholder="Digite a sua tarefa"/>
+                
+                        <!-- botão para adicionar a tarefa -->
+                        <button class="btnAdd"> 
+                            <span>Adicionar tarefa</span>
+                            <i class="fi fi-sr-plus"></i>
+                        </button>
+                </form>
+                        
+                        <!-- lista com itens da lista -->
+                        <ul class="todo-list"></ul>
+            </section>
+        </div>
+    </main>
+    <script src="js/todo-list.js"></script>
+    <script src="js/menu-hamburguer.js"></script>
 </body>
+
 </html>
