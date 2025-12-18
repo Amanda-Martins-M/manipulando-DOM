@@ -18,10 +18,19 @@ body{
     background-color: #09071b;
     color: #fafafa;
     font-family: sans-serif;
+
+    display: flex;
+    flex-direction: column;
 }
 
 a {
     color: #fafafa;
+}
+
+button{
+    border: none;
+    background-color: none;
+    cursor: pointer;
 }
 
 .container{
@@ -64,9 +73,7 @@ nav{
     gap: 0.5rem;
 }
 
-nav button{
-    border: none;
-
+.btn {
     height: 3rem;
     width: 3rem;
     
@@ -76,11 +83,9 @@ nav button{
     display: flex;
     align-items: center;
     justify-content: center;
-
-    cursor: pointer;
 }
 
-nav button:hover{
+.btn:hover{
     background-color: #caacfc;
 }
 
@@ -98,7 +103,7 @@ nav button i{
     top: 5rem;
     left: 0;
     width: 100%;
-    background-color: #ebe238;
+    background-color: #1f0a52;
     padding: 1rem;
     display: none;
 }
@@ -115,7 +120,7 @@ nav button i{
 }
 
 .menu li a:hover{
-    background-color: #4a99ca;
+    background-color: #4a4cca;
 }
 
 .ativo{
@@ -123,11 +128,16 @@ nav button i{
     flex-direction: column;
     gap: 1rem;
 }
-
 /* Estilos do header - fim */
 
 main{
+    flex: 1;
     margin: 0.25rem;
+}
+
+section:not(section:first-child){
+    padding-top: 1.5rem 0;
+    border-top: 1px solid #fafafa30;
 }
 
 /* Estilos ToDo list - ínicio */
@@ -172,7 +182,6 @@ main{
 .form-todo button{
     font-size: 1rem;
     font-weight: 600;
-    cursor: pointer;
 
     display: flex;
     align-items: center;
@@ -226,8 +235,140 @@ main{
 }
 /* Estilos ToDo list - fim */
 
+/* Estilos Slider - inicio */
+
+.slides img{
+    max-width: 100%;
+    display: none;
+    border-radius: 0.5rem;
+}
+
+.slides img.active{
+    display: block;
+}
+
+.slider-controls{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+footer {
+  background-color: #220d41;
+  height: 5rem;
+  padding: 0.5rem;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilos Slider - Fim */
+
+/* Estilos Form Login - Início */
+.form-container h2{
+    text-align: center;
+    margin: 1.5rem 0;
+    font-size: clamp(2rem, 5vw, 2.5rem);
+}
+
+.form-container p{
+    text-align: center;
+    margin: 1rem 0;
+    font-size: clamp(1rem, 3vw, 1.25rem);
+    font-weight: 600;
+}
+
+.form-login{
+    width: 100%;
+    max-width: 35rem;
+    background-color: #13032b;
+    border: 1px solid rgb(42, 8, 58); 
+    border-radius: 1rem;
+    margin: 0 auto;
+    padding: 1rem;
+  
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-login div{
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.form-login div input,
+.form-login button{
+    height: 3rem;
+    border-radius: 0.5rem;
+    font-size: clamp(0.875rem, 3vw, 1rem);
+}
+
+.form-login div input{
+    padding: 0 1rem;
+}
+
+.form-login button{
+    background: #8437f1;
+    border: none;
+    color: #fafafa;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.form-login button:hover{
+    background-color: #caacfc;
+}
+
+.btn-logout{
+    border: none;
+    color: #fafafa;
+    font-weight: 600;
+    background-color: rgb(146, 31, 31);
+    width: 100%;
+    max-width: 10rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    font-size: 1.25rem;
+}
+/* Estilos form login - fim */
+
+/* Estilos Faq - início */
+.faq h2{
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    position: relative;
+}
+
+.faq h2::after{
+    content:"";
+    position: absolute;
+    left: 0;
+    bottom: 0.5rem;
+    width: 20%;
+    height: 0.25rem;
+    background-color: #8437f1;
+}
+
+.faq-item button{
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    font-size: clamp(0.875rem, 3vw, 1.25rem);
+    font-weight: 600;
+    background-color: #8d68c0;
+}
+
 @media screen and (min-width: 780px){
-    nav button{
+    .btn-hidden{
         display: none;
     }
     .menu{

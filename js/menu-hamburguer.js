@@ -1,9 +1,3 @@
-/*     
-        <li>Ler ou alterar conteúdo</li>
-        <li>Alterar atributos</li>
-        <li>Criar ou remover elementos</li>
-        */
-
 /* Selecionar elementos */
 const btnMenu = document.getElementById("btn-menu");
 const listaMenu = document.querySelector("#menu-principal");
