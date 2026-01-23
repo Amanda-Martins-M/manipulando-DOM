@@ -1,12 +1,35 @@
+:root{
+    --color-white: #fafafa;
+    
+    --color-dark: #2c2c2c;
+
+    --color-gray: #989898;
+
+    --color-blue-dark: #4a4cca;
+    --color-blue-deep: #09071b;
+    --color-blue-medium: #1f0a52;
+ 
+    --color-purple-darker: #13032b;
+    --color-purple-dark: #2a083a;
+    --color-purple-medium: #3a0484;
+    --color-purple: #8437f1;
+    --color-purple-soft: #8d68c0;
+    --color-purple-light: #caacfc;
+}
+body{
+    margin: 0;
+}
+
 *, 
-::after,
-::before{
+*::after,
+*::before {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
     transition: all 200ms ease-in;
+    border: none;
 }
 
 html, 
@@ -15,8 +38,8 @@ body{
 }
 
 body{
-    background-color: #09071b;
-    color: #fafafa;
+    background-color: var(--color-blue-deep);
+    color: var(--color-white);
     font-family: sans-serif;
 
     display: flex;
@@ -24,11 +47,10 @@ body{
 }
 
 a {
-    color: #fafafa;
+    color: var(--color-white);
 }
 
 button{
-    border: none;
     background-color: none;
     cursor: pointer;
 }
@@ -54,10 +76,12 @@ button{
 /* Estilo do header - ínicio */
 
 header{
-    background-color: #8437f1;
+    background-color: var(--color-purple);
     height: 5rem;
     padding: 0.5rem;
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 .header{
@@ -65,6 +89,7 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 }
 
 nav{
@@ -76,9 +101,8 @@ nav{
 .btn {
     height: 3rem;
     width: 3rem;
-    
     border-radius: 0.5rem;
-    background-color: #3a0484;
+    background-color: var(--color-purple-medium);
 
     display: flex;
     align-items: center;
@@ -86,12 +110,12 @@ nav{
 }
 
 .btn:hover{
-    background-color: #caacfc;
+    background-color: var(--color-purple-light);
 }
 
 nav button i{
     font-size: 2rem;
-    color: #fafafa;
+    color: var(--color-white);
 
     display: flex;
     align-items: center;
@@ -103,7 +127,7 @@ nav button i{
     top: 5rem;
     left: 0;
     width: 100%;
-    background-color: #1f0a52;
+    background-color: var(--color-blue-medium);
     padding: 1rem;
     display: none;
 }
@@ -120,7 +144,13 @@ nav button i{
 }
 
 .menu li a:hover{
-    background-color: #4a4cca;
+    background-color: var(--color-blue-dark);
+}
+
+.menu li a.ativoLink {
+  background-color: var(--color-purple-medium);
+  border-bottom: 2px solid var(--color-green);
+  border-right: 2px solid var(--color-green);
 }
 
 .ativo{
@@ -137,20 +167,17 @@ main{
 
 section:not(section:first-child){
     padding-top: 1.5rem 0;
-    border-top: 1px solid #fafafa30;
+    border-top: 1px solid var(--color-white);
 }
 
 /* Estilos ToDo list - ínicio */
 
 .todo-list-container{
-    border: 1px solid #fafafa10;
+    border: 1px solid var(--color-white);
     border-radius: 0.5rem;
-
-    background-color: #2c2c2c;
-
+    background-color: var(--color-dark);
     max-width: 40rem;
     margin: 2rem auto;
-
     padding: 1rem;
 }
 
@@ -170,7 +197,6 @@ section:not(section:first-child){
 .form-todo input,
 .form-todo button{
     height: 3rem;
-    border: none;
     border-radius: 0.5rem;
 }
 
@@ -188,12 +214,12 @@ section:not(section:first-child){
     justify-content: center;
     gap: 0.5rem;
 
-    background-color: #caacfc;
-    color: #2c2c2c;
+    background-color: var(--color-purple-light);
+    color: var(--color-dark);
 }
 
 .form-todo button:hover{
-    background-color: #8d68c0;
+    background-color: var(--color-purple-soft);
 }
 
 .todo-list{
@@ -204,7 +230,7 @@ section:not(section:first-child){
 
 .todo-list li{
     font-size: 1.125rem;
-    background-color: black;
+    background-color: var(--color-blue-deep);
     padding: 0.5rem;
     border-radius: 0.5rem;
     display: flex;
@@ -213,19 +239,16 @@ section:not(section:first-child){
 }
 
 .todo-list li button{
-    border: 0;
-    background-color: #caacfc;
+    background-color: var(--color-purple-light);
     font-size: 1rem;
     padding: 0.25rem;
     border-radius: 0.5rem;
-    color: #fafafa;
+    color: var(--color-white);
     font-weight: 600;
-    cursor: pointer;
-    text-decoration: none;
 }
 
 .todo-list li button:hover{
-    background-color: #8437f1;
+    background-color: var(--color-purple);
     transform:  scale(1.1);
 }
 
@@ -236,7 +259,12 @@ section:not(section:first-child){
 /* Estilos ToDo list - fim */
 
 /* Estilos Slider - inicio */
-
+.slides{
+    position: relative;
+    overflow: hidden;
+    height: 40rem;
+    border-radius: 0.5rem;
+}
 .slides img{
     max-width: 100%;
     display: none;
@@ -254,7 +282,7 @@ section:not(section:first-child){
 }
 
 footer {
-  background-color: #220d41;
+  background-color: var(--color-purple);
   height: 5rem;
   padding: 0.5rem;
   position: relative;
@@ -283,8 +311,8 @@ footer {
 .form-login{
     width: 100%;
     max-width: 35rem;
-    background-color: #13032b;
-    border: 1px solid rgb(42, 8, 58); 
+    background-color: var(--color-purple-darker);
+    border: 1px solid var(--color-purple-dark);
     border-radius: 1rem;
     margin: 0 auto;
     padding: 1rem;
@@ -312,20 +340,20 @@ footer {
 }
 
 .form-login button{
-    background: #8437f1;
+    background: var(--color-purple);
     border: none;
-    color: #fafafa;
+    color: var(--color-white);
     font-weight: 600;
     cursor: pointer;
 }
 
 .form-login button:hover{
-    background-color: #caacfc;
+    background-color: var(--color-purple-light);
 }
 
 .btn-logout{
     border: none;
-    color: #fafafa;
+    color: var(--color-white);
     font-weight: 600;
     background-color: rgb(146, 31, 31);
     width: 100%;
@@ -340,6 +368,10 @@ footer {
 /* Estilos form login - fim */
 
 /* Estilos Faq - início */
+.faq{
+    padding: 1rem;
+}
+
 .faq h2{
     font-size: clamp(2rem, 5vw, 2.5rem);
     position: relative;
@@ -352,20 +384,152 @@ footer {
     bottom: 0.5rem;
     width: 20%;
     height: 0.25rem;
-    background-color: #8437f1;
+    background-color: var(--color-purple);
+}
+
+.faq-item{
+    padding: 0.5rem;
 }
 
 .faq-item button{
     width: 100%;
     height: 3rem;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     padding: 0 1rem;
+
     font-size: clamp(0.875rem, 3vw, 1.25rem);
     font-weight: 600;
-    background-color: #8d68c0;
+
+    background-color: var(--color-purple-soft);
+    color: var(--color-white);
+
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
 }
+
+.faq-resposta{
+    max-height: 0;
+    overflow: hidden;
+}
+
+.faq-resposta p{
+    font-size: 1.125rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.faq-resposta.ativoFaq{
+    /*  display: block;*/
+    max-height: fit-content;
+}
+
+/* Estilos Faq - fim */
+
+/* Estilos Contato - Início */
+.contato{
+    margin-top: 1rem;
+}
+.contato h2,
+p{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.contato h2{
+    font-size: clamp(2rem, 5vw, 2.5rem);
+}
+
+.form-contato,
+.input-container,
+.endereco{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-contato{
+    width: 100%;
+    max-width: 40rem;
+
+    margin: 0 auto;
+
+    background-color: var(--color-purple-darker);
+    border-radius: 0.5rem;
+    padding: 1rem;
+
+    gap: 1rem;
+}
+
+.form-contato input{
+    height: 3rem;
+    padding: 0.5rem 1 rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+}
+
+.form-contato textarea{
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-family: inherit;
+    font-size: 1.125rem;
+    font-weight: 400;
+}
+.input-container{
+    gap: 0.25rem;
+}
+
+.input-container label{
+    font-weight: 600;
+    font-size: 1.125rem;
+}
+
+.cep{
+    display: flex;
+    align-items: end;
+    gap: 1rem;
+}
+
+.form-contato button{
+    height: 3rem;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-items: center;
+
+    border-radius: 0.5rem;
+
+    background-color: var(--color-purple);
+    color: var(--color-white);
+}
+.form-contato button:hover{
+    background-color: var(--color-purple-light);
+}
+
+button[disabled]{
+    background: var(--color-gray);
+}
+
+button[disabled]:hover{
+    background: var(--color-gray);
+    cursor: not-allowed;
+}
+
+.endereco{
+    gap: 1rem;
+    max-height: 0;
+    overflow: hidden;
+}
+
+.endereco.ativo{
+    max-height: fit-content;
+}
+
+
 
 @media screen and (min-width: 780px){
     .btn-hidden{
@@ -378,6 +542,6 @@ footer {
         gap: 1rem;
     }
     .menu li a:hover{
-        background-color: #3a0484;
+        background-color: var(--color-purple-medium);
     }
 }
